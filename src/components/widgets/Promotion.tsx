@@ -13,8 +13,10 @@ const Promotion = () => {
         <div className="text-4xl font-bold text-center text-[#212121]">
           Our Promotions Events
         </div>
-        <div className="grid grid-cols-4 grid-rows-2 gap-5 mt-10 ">
-          <div className="col-span-2 bg-[#d6d6d8]  min-h-[200px] flex justify-around ">
+
+        {/* boxes */}
+        <div className="grid lg:grid-cols-4 md:grid-cols-1 grid-rows-2 gap-5 mt-10 grid-flow-row  ">
+          <div className="col-span-2 bg-[#d6d6d8]  min-h-[200px] flex justify-around max-h-[200px]">
             {" "}
             <div className="justify-center items-center flex flex-col">
               <div className="text-4xl font-semibold text-[#212121] max-w-xs ">
@@ -28,12 +30,30 @@ const Promotion = () => {
               <Image src={asset6} alt="" width={260} />
             </div>
           </div>
-          <div className="row-span-2 bg-blue-400 max-h-[450px] ">
+          <div className="row-span-2 bg-[#efe1c7]  pt-6  ">
             {" "}
+            <div className="font-normal   text-xl leading-6 pl-5  tracking-wide ">
+              Flex Sweatshirt
+            </div>
+            <div className="flex gap-3 items-center text-2xl pl-5 ">
+              <div className="line-through text-xl font-medium text-black/80 space-x-2">
+                $100.00
+              </div>
+              <div className="text-black font-semibold ">$75.00</div>
+            </div>
             <Image src={asset7} alt="" />
           </div>
-          <div className=" row-span-2 bg-red-400 max-h-[450px]  ">
+          <div className="row-span-2 bg-[#d7d7d9]  pt-5 ">
             {" "}
+            <div className="font-normal   text-xl leading-6 pl-5  tracking-wide ">
+              Flex Push Button Bomber
+            </div>
+            <div className="flex gap-3 items-center text-2xl pl-5 ">
+              <div className="line-through text-xl font-medium text-black/80 space-x-2">
+                $225.00
+              </div>
+              <div className="text-black font-semibold ">$190.00</div>
+            </div>
             <Image src={asset8} alt="" />
           </div>
           <div className="col-span-2 min-h-[200px] bg-[#212121] text-[#fff] flex flex-col justify-center items-center ">

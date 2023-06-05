@@ -12,9 +12,9 @@ const Hero = () => {
   return (
     <main>
       {/* Main div */}
-      <div className="flex wrapper ">
+      <div className="flex wrapper lg:flex-row flex-col items-center gap-y-20 justify-between">
         {/* Right side */}
-        <div className=" w-1/2 space-y-10 mt-24">
+        <div className="  space-y-10 mt-24 ">
           {" "}
           <div className="py-2.5 text-center bg-[#e1edff] rounded-lg w-[7.5rem] text-[#0000ff] font-bold">
             Sale 70%
@@ -29,7 +29,7 @@ const Hero = () => {
           <div className="bg-[#212121] text-white font-semibold text-xl w-48 h-16 flex items-center justify-center">
             Start Shopping
           </div>
-          <div className="flex gap-x-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-16 gap-y-10 flex-1">
             <Image src={asset1} alt="" />
             <Image src={asset2} alt="" />
             <Image src={asset3} alt="" />
@@ -37,9 +37,13 @@ const Hero = () => {
           </div>
         </div>
         {/* Left sid */}
-        <div className=" w-1/2">
-          <Image src={Header} alt="woman standing " className="z-40" />
-          <div className="w-[600px] h-[600px] bg-[#ffece3] rounded-full absolute top-32 left-50 -z-20 "></div>
+        <div className=" xl:object-none min-w-[400px] w-1/2 shrink-0 bg-slate-400 ">
+          <Image
+            src={Header}
+            alt="woman standing "
+            className="z-40 md:w-full max-w-full  "
+          />
+          {/* <div className="w-[600px] h-[600px] bg-[#ffece3] rounded-full absolute top-32 left-50 -z-20 "></div> */}
         </div>
 
         {/* main dicv end */}

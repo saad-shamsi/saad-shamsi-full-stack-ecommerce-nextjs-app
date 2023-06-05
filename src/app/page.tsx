@@ -10,6 +10,7 @@ import ProductCard from "./ProductCard";
 import Header from "@/components/layout/Header";
 import Hero from "@/components/widgets/Hero";
 import Promotion from "@/components/widgets/Promotion";
+import Feature from "@/components/widgets/Feature";
 
 const builder = imageUrlBuilder(client);
 
@@ -47,9 +48,10 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
+      {/* <Header />
       <Hero />
-      <Promotion />
+      <Promotion /> */}
+      <Feature />
       {/* <div className="grid lg:grid-cols-[repeat(4,auto)] md:grid-cols-[repeat(3,auto)] sm:grid-cols-[repeat(2,auto)] gap-x-10 justify-center  ">
         {data.map((item) => {
           return (
