@@ -4,7 +4,7 @@ const SubFooter = () => {
   return (
     <footer>
       <hr />
-      <div className="flex justify-around p-5">
+      <div className="grid justify-between py-5 px-10 sm:px-0 sm:grid-cols-1 md:grid-cols-2  lg:grid-cols-3 sm:wrapper gap-y-6 lg:gap-y-0 ">
         <div className="text-[#666666] text-base ">
           Copyright © 2023 Dine Market
         </div>

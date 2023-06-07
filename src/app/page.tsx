@@ -11,6 +11,7 @@ import Header from "@/components/layout/Header";
 import Hero from "@/components/widgets/Hero";
 import Promotion from "@/components/widgets/Promotion";
 import Feature from "@/components/widgets/Feature";
+import NewsLetter from "@/components/widgets/NewsLetter";
 
 const builder = imageUrlBuilder(client);
 
@@ -43,24 +44,23 @@ export async function getProductsData() {
 }
 
 export default async function Home() {
-  // const data: IProduct[] = await getProductsData();
-  // console.log(data);
+  const data: IProduct[] = await getProductsData();
 
   return (
     <>
-      {/* <Header />
       <Hero />
-      <Promotion /> */}
-      <Feature />
-      {/* <div className="grid lg:grid-cols-[repeat(4,auto)] md:grid-cols-[repeat(3,auto)] sm:grid-cols-[repeat(2,auto)] gap-x-10 justify-center  ">
+      <Promotion />
+      <div className=" grid lg:grid-cols-[repeat(4,auto)] md:grid-cols-[repeat(3,auto)] sm:grid-cols-[repeat(2,auto)] gap-x-10 gap-y-14 justify-center  ">
         {data.map((item) => {
           return (
-            <div key={item._id} className=" text-white">
+            <div key={item._id} className=" ">
               <ProductCard item={item} />
             </div>
           );
         })}
-      </div> */}
+      </div>
+      <Feature />
+      <NewsLetter />
     </>
   );
 }

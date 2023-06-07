@@ -37,12 +37,13 @@ const Hero = () => {
           </div>
         </div>
         {/* Left sid */}
-        <div className=" xl:object-none min-w-[400px] w-1/2 shrink-0 bg-slate-400 ">
+        <div className=" xl:object-none min-w-[400px] w-1/2 shrink-0 ">
           <Image
             src={Header}
             alt="woman standing "
             className="z-40 md:w-full max-w-full  "
           />
+
           {/* <div className="w-[600px] h-[600px] bg-[#ffece3] rounded-full absolute top-32 left-50 -z-20 "></div> */}
         </div>
 

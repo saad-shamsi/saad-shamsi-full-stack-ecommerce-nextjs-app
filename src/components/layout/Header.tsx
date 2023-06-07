@@ -3,10 +3,10 @@ import React from "react";
 import Logo from "../../../public/logo.webp";
 // import { GoSearch } from "react-icons/go";
 import Image from "next/image";
-
+import { BiSearch } from "react-icons/bi";
 const Header = () => {
   return (
-    <nav className="wrapper bg-slate-500 items-center ">
+    <nav className="wrapper  items-center ">
       {/* main div */}
       <div className="flex justify-between p-8">
         {/* logo */}
@@ -23,10 +23,11 @@ const Header = () => {
           </ul>
         </div>
         {/* search box */}{" "}
-        <div className="">
+        <div className="flex items-center px-3 border-none  bg-white rounded-lg">
+          <BiSearch />
           <input
             type="text"
-            className="px-14 py-2 rounded-lg  "
+            className="w-96 py-0.5 rounded  px-2 mx-3    "
             placeholder="What you looking for"
           />
         </div>
