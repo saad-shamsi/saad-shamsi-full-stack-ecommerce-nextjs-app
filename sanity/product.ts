@@ -25,6 +25,11 @@ export const product = defineType({
       type: "image",
     }),
     defineField({
+      name: "alt",
+      title: "Alt",
+      type: "string",
+    }),
+    defineField({
       name: "gender",
       title: "Gender Categoty",
       type: "reference",
@@ -36,12 +41,15 @@ export const product = defineType({
     }),
     defineField({
       name: "category",
-      title: "Product Categoty",
+      title: "Product Category",
       type: "reference",
       to: [
         {
           type: "category",
         },
+        // {
+        //   type: "gender",
+        // },
       ],
     }),
   ],

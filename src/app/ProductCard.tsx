@@ -23,14 +23,14 @@ const ProductCard: any = async ({ item }: { item: any }) => {
   };
 
   return (
-    <div className="min-h-[250px]   ">
+    <div className="min-h-[250px]  hover:scale-110 hover:translate-y-3 duration-300 cursor-pointer ">
       <div>
         <Image
           src={urlForImage(item.image).url()}
-          alt="product image"
-          width={200}
-          height={500}
-          className="object-cover object-top "
+          alt={item.alt}
+          width={380}
+          height={250}
+          className=" object-cover object-top  "
         />
       </div>
       <div className="mt-1 font-semibold text-xl max-w-xs text-black ">
@@ -39,12 +39,12 @@ const ProductCard: any = async ({ item }: { item: any }) => {
       <div className="mt-1 text-lg text-gray-500 ">{item.gender?.gender}</div>
 
       <div className="text-lg font-medium mt-2  text-black">${item.price}</div>
-      {/* <div
+      <div
         onClick={() => HandleAddToCart()}
         className="border rounded px-3 py-2 bg-blue-600 text-white cursor-pointer"
       >
         Add to Cart
-      </div> */}
+      </div>
     </div>
   );
 };

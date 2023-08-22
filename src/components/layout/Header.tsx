@@ -3,6 +3,7 @@ import React from "react";
 import Logo from "../../../public/logo.webp";
 // import { GoSearch } from "react-icons/go";
 import Image from "next/image";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
 const Header = () => {
   return (
@@ -32,7 +33,9 @@ const Header = () => {
           />
         </div>
         {/* cart */}
-        <div className="text-xl">cart</div>
+        <div className="text-xl">
+          <AiOutlineShoppingCart size={24} />
+        </div>
         {/* main div end*/}
       </div>
     </nav>
