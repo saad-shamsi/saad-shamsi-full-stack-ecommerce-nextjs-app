@@ -5,6 +5,7 @@ import Logo from "../../../public/logo.webp";
 import Image from "next/image";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BiSearch } from "react-icons/bi";
+import Link from "next/link";
 const Header = () => {
   return (
     <nav className="wrapper  items-center ">
@@ -12,15 +13,25 @@ const Header = () => {
       <div className="flex justify-between p-8">
         {/* logo */}
         <div>
-          <Image src={Logo} alt="dyne logo" />{" "}
+          <Link href="/">
+            <Image src={Logo} alt="dyne logo" />{" "}
+          </Link>
         </div>
         {/* list items list div */}
         <div>
           <ul className="flex gap-x-12 text-xl">
-            <li>Female</li>
-            <li>Male</li>
-            <li>Kids</li>
-            <li>All Products</li>
+            <Link href="category/female">
+              <li>Female</li>
+            </Link>
+            <Link href="category/male">
+              <li>Male</li>
+            </Link>
+            <Link href="category/kids">
+              <li>Kids</li>
+            </Link>
+            <Link href="/products">
+              <li>All Products</li>
+            </Link>
           </ul>
         </div>
         {/* search box */}{" "}

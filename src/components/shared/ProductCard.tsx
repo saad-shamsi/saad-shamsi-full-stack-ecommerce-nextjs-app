@@ -3,10 +3,9 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { client } from "@/lib/client";
 import { Image as IImage } from "sanity";
-
 const inter = Inter({ subsets: ["latin"] });
 import imageUrlBuilder from "@sanity/image-url";
-import { urlForImage } from "../../sanity/lib/image";
+import { urlForImage } from "../../../sanity/lib/image";
 const builder = imageUrlBuilder(client);
 import { FC } from "react";
 
