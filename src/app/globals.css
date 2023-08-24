@@ -31,6 +31,6 @@
   }
 
   .size li {
-    @apply w-[40px] h-[40px] flex justify-center items-center rounded-[50%] cursor-pointer text-[1rem] text-[#666] hover:shadow-[0_7px_29px_0_hsla(240,5%,41%,.2)]
+    @apply w-[40px] h-[40px] flex justify-center items-center rounded-[50%] cursor-pointer text-[1rem] text-[#666] hover:outline-gray-800 hover:border-solid hover:shadow-[0_7px_29px_0_hsla(240,5%,41%,.2)]
   }
 }

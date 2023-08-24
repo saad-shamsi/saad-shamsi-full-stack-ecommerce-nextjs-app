@@ -24,17 +24,17 @@ export default async function currentProductDetailedPage({
   console.log(specificProduct);
   //   console.log("specific product:" + specificProduct);
   return (
-    <section className="wrapper w-full text-[#212121] flex pt-10 items-start justify-center gap-16">
+    <section className="wrapper text-[#212121] flex flex-col md:flex-row  pt-10 items-start justify-center gap-16 md:gap-5">
       <div className="flex-1 ">
         <Image
           src={urlForImage(specificProduct.image).url()}
           alt={specificProduct.alt}
           width={600}
           height={900}
-          className=" object-cover object-top w-full lg:w-full "
+          className=" object-cover object-top  "
         />
       </div>
-      <div className="flex-1 pt-32">
+      <div className="flex-1 xl:pt-32 pt-5">
         <h2 className="text-3xl leading-8 tracking-wider font-medium  space-x-4">
           {specificProduct.product}
         </h2>
@@ -44,7 +44,7 @@ export default async function currentProductDetailedPage({
 
         <p className="pt-7 font-semibold text-lg">SELECT SIZE</p>
         <div className="pt-2 ">
-          <ul className="size flex">
+          <ul className="size flex ">
             <li>XS</li>
             <li>S</li>
             <li>M</li>
