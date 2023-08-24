@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { Inter } from "next/font/google";
 import { client } from "@/lib/client";
 const inter = Inter({ subsets: ["latin"] });
@@ -12,6 +13,7 @@ import NewsLetter from "@/components/widgets/NewsLetter";
 import StripeCheckout from "@/components/shared/StripeCheckout";
 import { IProduct } from "./product/page";
 import Link from "next/link";
+import SwiperSlider from "@/components/shared/SwiperSlider";
 
 export default async function Home() {
   const data = await getProductsData();
@@ -21,17 +23,8 @@ export default async function Home() {
       <Hero />
       <Promotion />
       <StripeCheckout />
-      <div className=" grid lg:grid-cols-[repeat(3,auto)] md:grid-cols-[repeat(2,auto)] sm:grid-cols-[repeat(1,auto)] gap-x-10 gap-y-14 justify-center  ">
-        {data.map((item: IProduct) => {
-          return (
-            <div key={item._id} className=" ">
-              <Link href={`/product/${data._id}`}>
-                <ProductCard item={item} />
-              </Link>
-            </div>
-          );
-        })}
-      </div>
+
+      <SwiperSlider />
       <Feature />
       <NewsLetter />
     </>

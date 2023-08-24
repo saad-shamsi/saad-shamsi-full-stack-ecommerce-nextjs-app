@@ -4,11 +4,12 @@ import { client } from "@/lib/client";
 const builder = imageUrlBuilder(client);
 import imageUrlBuilder from "@sanity/image-url";
 export interface IProduct {
-  title: string;
+  product: string;
   description: string;
   image: IImage;
   price: number;
   _id: string;
+  gender: { gender: string };
 }
 export const getCardData = async () => {
   const res = await fetch("http://localhost:3000/api/cart");

@@ -11,3 +11,26 @@
     padding-right: 3rem;
   }
 }
+
+@layer base {
+  .size li,
+  button,
+  .footer li,
+  nav li {
+    @apply list-none cursor-pointer
+  }
+  size p {
+    @apply text-[#212121] 
+  }
+  .size li,
+  .size p {
+    @apply font-bold text-[.9rem] leading-[16px] tracking-wider
+  }
+  .size ul {
+    @apply flex gap-4 mt-4
+  }
+
+  .size li {
+    @apply w-[40px] h-[40px] flex justify-center items-center rounded-[50%] cursor-pointer text-[1rem] text-[#666] hover:shadow-[0_7px_29px_0_hsla(240,5%,41%,.2)]
+  }
+}
