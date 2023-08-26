@@ -5,6 +5,7 @@ import { IProduct } from "../page";
 import { FaShoppingCart } from "react-icons/fa";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import { AiOutlineMinusCircle } from "react-icons/ai";
+import AddToCartProduct from "@/components/shared/AddToCartProduct";
 export async function generateStaticParams() {
   const data = await getProductsData();
   return data.map((item: IProduct) => {
@@ -21,7 +22,7 @@ export default async function currentProductDetailedPage({
   const specificProduct = data.find((item: any) => {
     return params.product == item._id;
   });
-  console.log(specificProduct);
+  // console.log(specificProduct);
   //   console.log("specific product:" + specificProduct);
   return (
     <section className="wrapper text-[#212121] flex flex-col md:flex-row  pt-10 items-start justify-center gap-16 md:gap-5">
@@ -73,6 +74,7 @@ export default async function currentProductDetailedPage({
             ${specificProduct.price}.00
           </h5>
         </div>
+        <AddToCartProduct product={specificProduct} qty={1} />
       </div>
     </section>
   );

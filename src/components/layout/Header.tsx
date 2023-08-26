@@ -9,11 +9,21 @@ import Link from "next/link";
 import { TfiMenuAlt } from "react-icons/tfi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
-const Header = () => {
+import { getProductsData } from "@/lib/fetchingSanityData";
+const Btns = [
+  { value: "Female", route: "female" },
+  { value: "Male", route: "male" },
+  { value: "Kids", route: "kids" },
+  { value: "All Products", route: "all" },
+];
+const Header = async () => {
   const [openMenu, setOpenMenu] = useState(false);
   function handleMenuButton() {
     setOpenMenu((event) => !event);
   }
+  const data = await getProductsData();
+
+  // console.log(data);
   return (
     <nav className="wrapper  items-center ">
       {/* main div */}
@@ -27,13 +37,13 @@ const Header = () => {
         {/* list items list div */}
         <div>
           <ul className="flex flex-row md:flex md:items-center xs:hidden  gap-x-12 text-xl">
-            <Link href="category/female">
+            <Link href={`/category/`}>
               <li>Female</li>
             </Link>
-            <Link href="category/male">
+            <Link href={`/category/`}>
               <li>Male</li>
             </Link>
-            <Link href="category/kids">
+            <Link href={`/category/`}>
               <li>Kids</li>
             </Link>
             <Link href="/products">
@@ -58,27 +68,34 @@ const Header = () => {
       </div>
 
       {/* MObile menu */}
-      <div className="flex wrapper justify-between items-center bg-slate-400 p-4">
+      <div className="flex  justify-between items-center lg:hidden bg-slate-400 p-4">
         <Link href="/">
           <Image src={Logo} alt="dyne logo" />
         </Link>
 
-        <div onClick={handleMenuButton}>
+        <div
+          onClick={handleMenuButton}
+          className="cursor-pointer  hover:transition-all ease-in duration-300"
+        >
           {openMenu ? <AiOutlineClose /> : <TfiMenuAlt className="" />}
         </div>
       </div>
 
-      {/* Conditional rendering of the mobile menu */}
-      {openMenu && (
-        <div className="fixed inset-0 bg-blue-400 md:hidden z-20 wrapper">
-          <ul className="flex flex-col gap-y-7 h-screen w-full top-18 justify-center items-center">
-            <Link href="category/female" onClick={() => setOpenMenu(false)}>
+      {/* Mobile menu */}
+      <div
+        className={`fixed inset-0 bg-blue-400 ${
+          openMenu ? "block" : "hidden"
+        } md:hidden z-20 wrapper`}
+      >
+        <div className="flex flex-col h-screen w-64 top-0 justify-center items-center">
+          <ul className="flex flex-col gap-y-7">
+            <Link href="/category/female" onClick={() => setOpenMenu(false)}>
               <li>Female</li>
             </Link>
-            <Link href="category/male" onClick={() => setOpenMenu(false)}>
+            <Link href="/category/male" onClick={() => setOpenMenu(false)}>
               <li>Male</li>
             </Link>
-            <Link href="category/kids" onClick={() => setOpenMenu(false)}>
+            <Link href="/category/kids" onClick={() => setOpenMenu(false)}>
               <li>Kids</li>
             </Link>
             <Link href="/products" onClick={() => setOpenMenu(false)}>
@@ -86,7 +103,7 @@ const Header = () => {
             </Link>
           </ul>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
