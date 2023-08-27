@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+
 import { Inter } from "next/font/google";
 import { client } from "@/lib/client";
 const inter = Inter({ subsets: ["latin"] });
