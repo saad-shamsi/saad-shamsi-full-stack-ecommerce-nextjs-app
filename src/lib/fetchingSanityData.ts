@@ -9,6 +9,7 @@ export interface IProduct {
   image: IImage;
   price: number;
   _id: string;
+  alt: string;
   gender: { gender: string };
 }
 export const getCardData = async () => {

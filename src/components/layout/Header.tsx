@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+
 import Logo from "../../../public/logo.webp";
 // import { GoSearch } from "react-icons/go";
 import Image from "next/image";
@@ -10,6 +11,7 @@ import { TfiMenuAlt } from "react-icons/tfi";
 import { AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
 import { getProductsData } from "@/lib/fetchingSanityData";
+import SignInBtn from "../shared/SignInBtn";
 const Btns = [
   { value: "Female", route: "female" },
   { value: "Male", route: "male" },
@@ -51,6 +53,7 @@ const Header = async () => {
             </Link>
           </ul>
         </div>
+        <SignInBtn />
         {/* search box */}{" "}
         <div className="flex items-center px-3 border-none  bg-white rounded-lg">
           <BiSearch />

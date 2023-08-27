@@ -55,14 +55,14 @@ export default function SwiperSliderContainer({
         {products.map((item: IProduct, index) => (
           <SwiperSlide
             key={index}
-            className="min-h-[250px]  hover:scale-110 hover:translate-y-3 duration-300 cursor-pointer"
+            className="min-h-[250px] cursor-pointer wrapper"
           >
             {/* <ProductSlideCard imageUrl={urlForImage(image).url()} _id={_id} /> */}
             <Link href={`/product/${item._id}`}>
               <div className="product-card">
                 <Image
                   src={urlForImage(item.image).url()}
-                  alt="asdas"
+                  alt={item.alt}
                   loading="lazy"
                   width={380}
                   height={400}
@@ -80,12 +80,12 @@ export default function SwiperSliderContainer({
             <div className="text-lg font-medium mt-2  text-black">
               ${item.price}
             </div>
-            <div
+            {/* <div
               onClick={() => HandleAddToCart()}
               className="border rounded px-2 py-2 bg-blue-600 text-white cursor-pointer"
             >
               Add to Cart
-            </div>
+            </div> */}
           </SwiperSlide>
         ))}
       </div>
