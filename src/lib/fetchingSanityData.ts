@@ -10,6 +10,7 @@ export interface IProduct {
   price: number;
   _id: string;
   alt: string;
+  category: { category: string };
   gender: { gender: string };
 }
 export const getCardData = async () => {
