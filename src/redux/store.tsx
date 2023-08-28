@@ -1,16 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { useDispatch, TypedUseSelectorHook, useSelector } from "react-redux";
-import cartSlice from "./features/cartSlice";
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+import cartReducer from "./features/cartSlice";
+
 export const store = configureStore({
   reducer: {
-    cart: cartSlice,
+    cart: cartReducer,
   },
 });
 
-// Infer  the `RootState` and `AppDispathch` types from the store itself
+// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: PostState, comments,users:UserState
-
+// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;
 
 export const useAppDispatch: () => AppDispatch = useDispatch;

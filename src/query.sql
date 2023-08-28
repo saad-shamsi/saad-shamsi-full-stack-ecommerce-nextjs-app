@@ -9,5 +9,5 @@ image_url text NOT NULL
 )
 
 ALTER TABLE cartdata (
-    product_title
+     product_title,user_id
 )

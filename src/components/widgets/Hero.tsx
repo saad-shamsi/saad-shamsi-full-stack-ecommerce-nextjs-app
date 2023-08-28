@@ -1,7 +1,5 @@
-"use client";
 import Image from "next/image";
 import Header from "../../../public/header.webp";
-
 import asset1 from "../../../public/asset 1.png";
 import asset2 from "../../../public/asset 2.png";
 import asset3 from "../../../public/asset 3.png";

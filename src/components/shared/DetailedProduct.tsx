@@ -8,20 +8,24 @@ import Image, { StaticImageData } from "next/image";
 import { urlForImage } from "../../../sanity/lib/image";
 
 import { IProduct } from "@/lib/fetchingSanityData";
+import { useAuth } from "@clerk/nextjs";
 const DetailedProduct = ({ filteredData }: { filteredData: IProduct }) => {
   const [quantity, setQuantity] = useState<number>(5);
+  const { userId } = useAuth();
+  // console.log(userId);
   function handleSubtractQuantity() {
     setQuantity(quantity - 1);
   }
   function handleAddQuantity() {
     setQuantity(quantity + 1);
   }
+  console.log(userId + " added");
   async function handleAddToCart() {
     try {
       const response = await fetch("/api/cart", {
         method: "POST",
         body: JSON.stringify({
-          user_id: "new id hy meri",
+          user_id: userId as string,
           product_id: filteredData._id,
           product_title: filteredData.product,
           image_url: urlForImage(filteredData.image).url(),
@@ -29,12 +33,11 @@ const DetailedProduct = ({ filteredData }: { filteredData: IProduct }) => {
           product_quantity: quantity,
         }),
       });
-      return response;
     } catch (error: any) {
       return error.json({ message: error.message });
     }
   }
-  console.log(handleAddToCart);
+
   return (
     <section className="wrapper text-[#212121] flex flex-col md:flex-row  pt-10 items-start justify-center gap-16 md:gap-5">
       <div className="flex-1 ">
