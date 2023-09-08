@@ -1,5 +1,3 @@
-"use cient";
-
 const NewsLetter = () => {
   return (
     <section className="h-96 bg-slate-50 text-center flex flex-col justify-center wrapper items-center">
@@ -20,7 +18,7 @@ const NewsLetter = () => {
             id=""
             placeholder="input ypur email"
             required
-            className="w-72 focus:ring-0 px-3 border-spacing-1 border-black border-2  py-2"
+            className="focus:ring-0 px-3 border-spacing-1 border-black border-2  py-2"
           />
           <button className="bg-black px-3 py-2 text-white">Get Started</button>
         </div>

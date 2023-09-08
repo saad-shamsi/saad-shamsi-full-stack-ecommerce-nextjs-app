@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import asset6 from "../../../public/asset 6.png";
 import asset7 from "../../../public/asset 7.png";

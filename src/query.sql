@@ -8,6 +8,7 @@ product_quantity int NOT NULL,
 image_url text NOT NULL
 )
 
-ALTER TABLE cartdata (
+ALTER TABLE cartdata 
+ADD CONSTRAINT UNIQUENESS UNIQUE(
      product_title,user_id
 )

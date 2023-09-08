@@ -15,7 +15,7 @@ export const product = defineType({
       title: "Slug",
       type: "slug",
       options: {
-        source: "title",
+        source: "product",
         maxLength: 100,
       },
     }),
@@ -32,7 +32,7 @@ export const product = defineType({
     defineField({
       name: "image",
       title: "Image",
-      type: "image",
+      type: "Aarray",
     }),
     defineField({
       name: "alt",
@@ -41,26 +41,19 @@ export const product = defineType({
     }),
     defineField({
       name: "gender",
-      title: "Gender Category",
+      title: "Gender",
       type: "reference",
-      to: [
-        {
-          type: "gender",
-        },
-      ],
+      to: {
+        type: "gender",
+      },
     }),
     defineField({
       name: "category",
       title: "Product Category",
       type: "reference",
-      to: [
-        {
-          type: "category",
-        },
-        // {
-        //   type: "gender",
-        // },
-      ],
+      to: {
+        type: "category",
+      },
     }),
   ],
 });

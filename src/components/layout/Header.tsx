@@ -20,11 +20,11 @@ const Btns = [
 ];
 const Header = async () => {
   const [openMenu, setOpenMenu] = useState(false);
+
+  const data = await getProductsData();
   function handleMenuButton() {
     setOpenMenu((event) => !event);
   }
-  const data = await getProductsData();
-
   // console.log(data);
   return (
     <nav className="wrapper  items-center ">

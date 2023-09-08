@@ -1,4 +1,3 @@
-"use client";
 import asset9 from "../../../public/asset 9.png";
 import Image from "next/image";
 

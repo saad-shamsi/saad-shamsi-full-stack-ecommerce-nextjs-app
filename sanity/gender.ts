@@ -6,9 +6,17 @@ export const gender = defineType({
   type: "document",
   fields: [
     defineField({
-      name: "gender",
-      type: "string",
-      title: "Gender",
+      name: "sizes",
+      type: "array",
+      title: "Sizes",
+      of: [
+        {
+          name: " size",
+          type: "string",
+          title: "Size",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     }),
   ],
 });

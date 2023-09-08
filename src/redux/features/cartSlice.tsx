@@ -41,25 +41,32 @@ export const cartSlice = createSlice({
         existingItem.totalPrice = totalPrice;
       }
     },
-    removeProdut(state: CartState, action: PayloadAction<string>) {
-      const product = action.payload;
-      state.items = state.items.filter((item) => item._id !== product);
-      state.totalQuantity = state.items.reduce(
-        (total, item) => total + item.totalPrice,
-        0
-      );
+    removeProduct(state: CartState, action: PayloadAction<string>) {
+      const productId = action.payload;
+      const removedItem = state.items.find((item) => item._id === productId);
+
+      if (removedItem) {
+        // Update the totalQuantity by subtracting the quantity of the removed item
+        state.totalQuantity -= removedItem.quantity;
+
+        // Filter out the removed item from the items array
+        state.items = state.items.filter((item) => item._id !== productId);
+      }
     },
     decrementCartProduct(state: CartState, action: PayloadAction<string>) {
-      const product = action.payload;
-      const existingItem = state.items.find((item) => item._id === product);
-      state.totalQuantity--;
-      state.totalAmount = state.totalAmount - existingItem?.price!;
-      if (existingItem?.quantity === 1) {
-        state.items = state.items.filter((item) => item._id !== product);
-      } else {
-        existingItem!.quantity--;
-        existingItem!.totalPrice =
-          existingItem?.totalPrice! - existingItem?.price!;
+      const productId = action.payload;
+      const existingItem = state.items.find((item) => item._id === productId);
+
+      if (existingItem) {
+        state.totalQuantity--;
+        state.totalAmount -= existingItem.price;
+
+        if (existingItem.quantity === 1) {
+          state.items = state.items.filter((item) => item._id !== productId);
+        } else {
+          existingItem.quantity--;
+          existingItem.totalPrice -= existingItem.price;
+        }
       }
     },
   },
